@@ -17,8 +17,8 @@
       .hero-text {
           text-align: center;
           padding: 75px 0;
-          background-color: #f8f9fa;
-          color: #333;
+          background-color: #1e1e1e;
+          color: #ffffff;
           font-weight: 100;
       }
 
@@ -42,13 +42,10 @@
       include_once('nav-common.php');
     }
     ?>
-        </ul>
-      </div>
-    </div>
-  </nav>
+
     
   <div class="container">
-    <div class="hero-text" style="background-color: white;">
+    <div class="hero-text">
       <img src="imgs/favicon_io/android-chrome-192x192.png" alt="Logo">
       <h1>DocSpot Channeling Service</h1>
       <p class="lead">Find the best doctors and schedule your appointments easily.</p>
@@ -71,7 +68,7 @@
 
   <div id="services" class="container mt-3" style="text-align: center;">
     <div class="columns">
-      <h2 class="hero-text" style="background-color: white; padding: 50px; font-weight: 150;">Our Services</h2>
+      <h2 class="hero-text" style="padding: 50px; font-weight: 150;">Our Services</h2>
         <div class="row-md-4 mt-3" style="width: 50%;">
             <div class="card">
               <img src="imgs/1.gif" class="card-img-top" alt="...">
