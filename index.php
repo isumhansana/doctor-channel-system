@@ -71,25 +71,26 @@
       <h2 class="hero-text" style="padding: 50px; font-weight: 150;">Our Services</h2>
         <div class="row-md-4 mt-3" style="width: 50%;">
             <div class="card">
-              <img src="imgs/1.gif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-weight: 400;">Employee Onboarding</h5>
+              <img src="imgs/1.png" class="card-img-top" alt="...">
+                <div class="card-body" style="background-color: #1e1e1e;">
+                    <h5 class="card-title" style="font-weight: 400; color: #ffffff;">Doctor Channeling</h5>
                 </div>
             </div>
         </div>
         <div class="row-md-4 mt-5" style="width: 50%; margin-left: 50%;">
-          <img src="imgs/2.gif" class="card-img-top" alt="...">  
           <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-weight: 400;">Time and Attendance Tracking</h5>
+            <img src="imgs/2.png" class="card-img-top" alt="..."> 
+                <div class="card-body" style="background-color: #1e1e1e;">
+                    <h5 class="card-title" style="font-weight: 400; color: #ffffff;">Viewing Appointments</h5>
                 </div>
             </div>
         </div>
-        <div class="row-md-4 mt-5" style="width: 50%;">
-          <img src="imgs/3.gif" class="card-img-top" alt="...">  
+        <div class="row-md-4 mt-5 mb-4" style="width: 50%;">
+            
           <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-weight: 400;">Leave Management</h5>
+              <img src="imgs/3.png" class="card-img-top" alt="...">  
+                <div class="card-body" style="background-color: #1e1e1e;">
+                    <h5 class="card-title" style="font-weight: 400; color: #ffffff;">Doctor - Patient Communication</h5>
                 </div>
             </div>
         </div>
