@@ -41,8 +41,8 @@
     <body>
         <div class="center">
             <div class="button-container">
-                <a href="registerDoctor.php" class="btn btn-primary me-4">Register as a Doctor</a>
-                <a href="registerPatient.php" class="btn btn-primary">Register as a Patient</a>
+                <a href="loginDoctor.php" class="btn btn-primary me-4">Login as a Doctor</a>
+                <a href="loginPatient.php" class="btn btn-primary">Login as a Patient</a>
             </div>
         </div>
     </body>
