@@ -33,7 +33,7 @@
     }
 
     .hero-text h1 {
-        font-size: 48px;
+        font-size: 44px;
         margin-bottom: 24px;
         font-weight: 300;
     }
@@ -82,8 +82,8 @@
   <div class="container-md text-center mt-5 hero-text" style="max-width: 900px; padding: 0px; background-color: #171717;">
     <h1>Patient Dashboard</h1>
 
-    <div class="row">
-      <div class="col-md-4 mb-4">
+    <div class="row mt-5">
+      <div class="col-md-4 mb-4 me-4">
         <a href="docDetails.php" class="card p-4 rounded-5 dash-card">
           <img src="imgs/dashboard/channel.png" class="card-img-top mb-2" alt="...">
           <h6 class="dash-card-text">Doctor Channeling</h6>
