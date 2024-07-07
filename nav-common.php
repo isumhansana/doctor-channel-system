@@ -11,14 +11,14 @@
           </ul>
           <form class="d-flex" role="search">
           <?php 
-                if(basename($_SERVER['PHP_SELF']) === 'register.php') {
+                if((basename($_SERVER['PHP_SELF']) === 'registerDoctor.php') || (basename($_SERVER['PHP_SELF']) === 'registerPatient.php')) {
                     echo'<a class="btn btn-primary" href="register.php">Register</a>&ensp;';
                 }else{
                     echo'<a class="btn btn-outline-primary" href="register.php">Register</a>&ensp;';
                 }
             ?>
             <?php 
-                if(basename($_SERVER['PHP_SELF']) === 'login.php') {
+                if((basename($_SERVER['PHP_SELF']) === 'loginDoctor.php') || (basename($_SERVER['PHP_SELF']) === 'loginPatient.php')) {
                     echo'<a class="btn btn-success" href="login.php">Login</a>';
                 }else{
                     echo'<a class="btn btn-outline-success" href="login.php">Login</a>';
