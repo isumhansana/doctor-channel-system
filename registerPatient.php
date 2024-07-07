@@ -47,8 +47,8 @@
     include_once('nav-common.php');
   ?>
   <div class="container-md text-center mt-4 mb-4 hero-text" style="max-width: 500px; padding: 20px; border: 2px solid #405D72;">
-    <h1 class="mb-4">Doctor SignUp</h1>
-    <form action="dbregisterDoc.php" method="post">
+    <h1 class="mb-4">Patient SignUp</h1>
+    <form action="dbregisterPatient.php" method="post">
         <div class="mb-3">
             <input type="email" onkeyup="hideAlert()" class="form-control text-center" id="exampleInputEmail1" name ="email" aria-describedby="emailHelp" placeholder="Email address" required>
             <div id="emailHelp" class="form-text" style="color: #ffffff;">We'll never share your email with anyone else.</div>
@@ -64,9 +64,6 @@
         </div>
         <div class="mb-3">
             <input type="tel" class="form-control text-center" id="exampleInputPhone" name="phone" placeholder="Phone" required>
-        </div>
-        <div class="mb-3">
-            <input type="text" class="form-control text-center" id="exampleInputSpecialization" name="specialization" placeholder="Specialization" required>
         </div>
         <div class="mb-3">
             <label class="fw-normal">Date of Birth</label>

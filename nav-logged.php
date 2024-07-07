@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #303134;">
+<nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #1f1f1f;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php"><img src="imgs/favicon_io/favicon-32x32.png" alt="Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
