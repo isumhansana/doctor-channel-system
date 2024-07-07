@@ -48,7 +48,7 @@
     ?>
     <div class="container-md text-center mt-5 hero-text" style="max-width: 500px; position: absolute; top: 0; bottom: 0; right: 0; left: 0; align-self: center; padding: 40px; border: 2px solid #405D72;">
       <h1 class="mb-4">Welcome Back!</h1>
-      <form action = "dbloginDoctor.php" method="POST">
+      <form action = "dbloginDoc.php" method="POST">
           <div class="mb-3">
               <input type="email" onkeyup="hideAlert()" name="email" class="form-control text-center" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address" required>
           </div>
@@ -75,7 +75,8 @@
       } else if(isset($_GET['invalidEmail'])) {
          echo(
           '<div id="alert" class="alert alert-danger mt-3" role="alert">
-            Invalid email or user does not exist.
+            Invalid email or user does not exist. </br>
+            Are you a Patient? <a href="loginPatient.php">Sign In Here</a>
            </div>'
           );
       }

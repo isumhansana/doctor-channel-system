@@ -75,7 +75,8 @@
       } else if(isset($_GET['invalidEmail'])) {
          echo(
           '<div id="alert" class="alert alert-danger mt-3" role="alert">
-            Invalid email or user does not exist.
+            Invalid email or user does not exist. </br>
+            Are you a Doctor? <a href="loginDoctor.php">Sign In Here</a>
            </div>'
           );
       }
