@@ -50,17 +50,13 @@
       <h1>DocSpot Channeling Service</h1>
       <p class="lead">Find the best doctors and schedule your appointments easily.</p>
       <?php
-      if(isset($_SESSION['adminloggedin'])) {
+      if(isset($_SESSION['doctorloggedin'])) {
         echo(
-          '<a href="usersList.php" class="btn btn-primary btn-lg">Admin Panel</a>'
-        );
-      } else if(isset($_SESSION['userloggedin'])) {
-        echo(
-          '<a href="dashboard.php" class="btn btn-primary btn-lg">User Dashboard</a>'
+          '<a href="appointments.php" class="btn btn-primary btn-lg">Appointments</a>'
         );
       } else {
         echo(
-          '<a href="register.php" class="btn btn-primary btn-lg">Channel Your Doctor</a>'
+          '<a href="docDetails.php" class="btn btn-primary btn-lg">Channel Your Doctor</a>'
         );
       }
       ?>

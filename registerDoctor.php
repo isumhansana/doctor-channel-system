@@ -19,7 +19,7 @@
       }
 
       .hero-text h1 {
-          font-size: 44px;
+          font-size: 40px;
           margin-bottom: 24px;
           font-weight: 300;
       }
@@ -47,7 +47,7 @@
     include_once('nav-common.php');
   ?>
   <div class="container-md text-center mt-4 mb-4 hero-text" style="max-width: 500px; padding: 20px; border: 2px solid #405D72;">
-    <h1 class="mb-4">Doctor SignUp</h1>
+    <h1 class="mb-4">Doctor Registration</h1>
     <form action="dbregisterDoc.php" method="post">
         <div class="mb-3">
             <input type="email" onkeyup="hideAlert()" class="form-control text-center" id="exampleInputEmail1" name ="email" aria-describedby="emailHelp" placeholder="Email address" required>
@@ -63,10 +63,10 @@
             <input type="text" class="form-control text-center" id="exampleInputLastName" name="lastName" placeholder="Last Name" required>
         </div>
         <div class="mb-3">
-            <input type="tel" class="form-control text-center" id="exampleInputPhone" name="phone" placeholder="Phone" required>
+            <input type="text" class="form-control text-center" id="exampleInputSpecialization" name="specialization" placeholder="Specialization" required>
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control text-center" id="exampleInputSpecialization" name="specialization" placeholder="Specialization" required>
+            <input type="tel" class="form-control text-center" id="exampleInputPhone" name="phone" placeholder="Phone" required>
         </div>
         <div class="mb-3">
             <label class="fw-normal">Date of Birth</label>
@@ -89,7 +89,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary mb-3" onclick="register()">Register</button>
-        <p>Already have an Account? <a href="login.html">Sign In</a></p>
+        <p>Already have an Account? <a href="loginDoctor.php">Sign In</a></p>
     </form>
     <?php
     if(isset($_GET['error'])) {
