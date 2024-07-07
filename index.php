@@ -17,7 +17,7 @@
       .hero-text {
           text-align: center;
           padding: 75px 0;
-          background-color: #1e1e1e;
+          background-color: #171717;
           color: #ffffff;
           font-weight: 100;
       }
@@ -34,7 +34,7 @@
       }
   </style>
   </head>
-  <body style="background-color: #1e1e1e;">
+  <body style="background-color: #171717;">
     <?php
     if(isset($_SESSION['adminloggedin']) || isset($_SESSION['userloggedin'])) {
       include_once('nav-logged.php');
