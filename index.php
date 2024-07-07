@@ -36,7 +36,7 @@
   </head>
   <body style="background-color: #171717;">
     <?php
-    if(isset($_SESSION['adminloggedin']) || isset($_SESSION['userloggedin'])) {
+    if(isset($_SESSION['doctorloggedin']) || isset($_SESSION['patientloggedin'])) {
       include_once('nav-logged.php');
     }else {
       include_once('nav-common.php');
@@ -52,7 +52,7 @@
       <?php
       if(isset($_SESSION['doctorloggedin'])) {
         echo(
-          '<a href="appointments.php" class="btn btn-primary btn-lg">Appointments</a>'
+          '<a href="appointments.php" class="btn btn-primary btn-lg">View Your Appointments</a>'
         );
       } else {
         echo(
