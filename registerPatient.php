@@ -27,13 +27,18 @@
       .form-control {
         background-color: #171717;
         border-color: #405D72;
-        color: grey;
+        color: whitesmoke;
       }
 
       .form-control:focus {
         background-color: #e6e6e6;
         border-color: #405D72;
         color: black;
+      }
+
+      .form-control::placeholder {
+        color: grey;
+        opacity: 0.7;
       }
 
       .hero-text p {
