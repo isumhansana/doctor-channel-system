@@ -111,7 +111,7 @@
         <div class="row" style="justify-content: center;">
             <div class="col-md-5">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Search By Name" />
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Search By First Name or Last Name" />
                 </div>
             </div>
             <div class="col-md-5">
