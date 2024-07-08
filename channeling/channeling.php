@@ -93,5 +93,17 @@
           <button type="submit" class="btn btn-primary mb-3">Submit</button>
       </form>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var today = new Date();
+            var tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1); // Calculate tomorrow's date
+
+            var datePicker = document.getElementById("exampleInputDate");
+
+            // Set the minimum date to tomorrow
+            datePicker.min = tomorrow.toISOString().slice(0, 10);
+        });
+    </script>
   </body>
 </html>

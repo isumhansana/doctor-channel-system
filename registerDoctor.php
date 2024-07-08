@@ -110,6 +110,14 @@
       var alertBox = document.getElementById("alert");
       alertBox.style.display = "none";
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var today = new Date();
+        var datePicker = document.getElementById("exampleInputDOB");
+    
+        // Set the maximum date to today
+        datePicker.max = today.toISOString().slice(0, 10);
+    });
   </script>
   </body>
 </html>
