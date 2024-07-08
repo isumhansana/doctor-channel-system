@@ -84,7 +84,7 @@
 
     <div class="row mt-5">
       <div class="col-md-4 mb-4 me-4">
-        <a href="docDetails.php" class="card p-4 rounded-5 dash-card">
+        <a href="channeling/docDetails.php" class="card p-4 rounded-5 dash-card">
           <img src="imgs/dashboard/channel.png" class="card-img-top mb-2" alt="...">
           <h6 class="dash-card-text">Doctor Channeling</h6>
         </a>

@@ -56,7 +56,7 @@
         );
       } else {
         echo(
-          '<a href="docDetails.php" class="btn btn-primary btn-lg">Channel Your Doctor</a>'
+          '<a href="channeling/docDetails.php" class="btn btn-primary btn-lg">Channel Your Doctor</a>'
         );
       }
       ?>
