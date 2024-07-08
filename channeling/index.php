@@ -173,7 +173,7 @@
                     // Fetch the rows
                     while ($row = $result->fetch_assoc()) {
                         // Display the data in table rows
-                        echo "<tr class='clickable-row' data-href='items/index.php?docEmail=" . $row["email"] . "'>";
+                        echo "<tr class='clickable-row' data-href='channeling.php?docEmail=" . $row["email"] . "'>";
                         echo "<td class='p-3'> Dr. " . $row["firstName"] . " " . $row["lastName"] . " </td>";
                         echo "<td class='p-3'>" . $row["specialization"] . "</td>";
                         echo "</tr>";
