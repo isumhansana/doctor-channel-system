@@ -348,8 +348,8 @@
                 <mxCell id="161" value="" style="whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="104.5" y="3622" width="630" height="480" as="geometry"/>
                 </mxCell>
-                <mxCell id="162" value="Appointment Page (Patient's View)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="315.5" y="3600" width="210" height="30" as="geometry"/>
+                <mxCell id="162" value="Note Page (Patient's View)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="335.5" y="3600" width="170" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="163" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Appointment with &amp;lt;Doctor Name&amp;gt;&lt;/span&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="278.5" y="3677" width="288.5" height="40" as="geometry"/>
@@ -399,8 +399,8 @@
                 <mxCell id="182" value="" style="whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="996.5" y="3622" width="630" height="480" as="geometry"/>
                 </mxCell>
-                <mxCell id="183" value="Appointment Page (Doctor's View)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="1207.5" y="3600" width="210" height="30" as="geometry"/>
+                <mxCell id="183" value="Note Page (Doctor's View)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1232.5" y="3600" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="186" value="Nav Bar" style="whiteSpace=wrap;html=1;fontSize=12;fillColor=#333333;" parent="1" vertex="1">
                     <mxGeometry x="995.5" y="3622" width="630" height="30" as="geometry"/>
