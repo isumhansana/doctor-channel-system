@@ -1,11 +1,11 @@
 <?php
     session_start();
     if(isset($_SESSION['doctorloggedin'])) {
-        header('Location: appointments.php');
+        header('Location: ../appointments.php');
         exit();
     }
     else if(!isset($_SESSION['patientloggedin'])) {
-        header('Location: loginPatient.php');
+        header('Location: ../loginPatient.php');
         exit();
     }
 ?>
