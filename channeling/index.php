@@ -63,6 +63,14 @@
             color: grey;
             opacity: 0.7;
         }
+
+        th {
+            font-weight: 500;
+        }
+
+        .table-dark {
+            --bs-table-bg: #171717;
+        }
     </style>
 </head>
 
@@ -100,34 +108,29 @@
         <h1>Select Your Doctor</h1>
 
         <form action="" method="GET">
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row" style="justify-content: center;">
+            <div class="col-md-5">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Search By Name" required/>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Search By Name" />
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="spec" name="spec" placeholder="Search By Specialization" required/>
+                    <input type="text" class="form-control" id="spec" name="spec" placeholder="Search By Specialization" />
                 </div>
             </div>
-            <div class="col-md-1">
-                <button type="submit" class="btn btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                    </svg>
-                </button>
+            <div class="col-md-4 mt-3">
+                <button type="submit" class="btn btn-primary">Search</button>
             </div>
         </div>
         </form>
 
 
-        <table class="table table-hover mt-5">
+        <table class="table table-dark table-hover mt-5">
             <thead>
                 <tr>
-                    <th class="hero-text" style="font-weight: 500;">List Name</th>
-                    <th class="hero-text" style="font-weight: 500;">Caption</th>
-                    <th class="hero-text" style="font-weight: 500;">Date Created</th>
+                    <th>Name</th>
+                    <th>Specialization</th>
                 </tr>
             </thead>
             <tbody>
@@ -136,7 +139,7 @@
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $dbname = "aiphp";
+                $dbname = "docspot";
                 $email = $_SESSION['patientloggedin'];
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -147,12 +150,18 @@
                 }
 
                 //Check if a search request is made
-                if(isset($_GET['name']) && !empty($_GET['spec'])) {
-                    $search=$_GET['search'];
-                    $sql = "SELECT taskID,createdDate,listName,caption FROM task WHERE email = '$email' AND listName LIKE '%$search%' ORDER BY createdDate DESC";
+                if((isset($_GET['name']) && isset($_GET['spec'])) && (!empty($_GET['spec'])) && (!empty($_GET['name']))) {
+                    $name=$_GET['name'];
+                    $spec=$_GET['spec'];
+                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE (firstName LIKE '%$name%' OR lastName LIKE '%$name%') AND specialization LIKE '%$spec%' ORDER BY firstName";
+                }else if((isset($_GET['name'])) && (!empty($_GET['name']))){
+                    $name=$_GET['name'];
+                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE (firstName LIKE '%$name%' OR lastName LIKE '%$name%') ORDER BY firstName";
+                }else if((isset($_GET['spec'])) && (!empty($_GET['spec']))){
+                    $spec=$_GET['spec'];
+                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE specialization LIKE '%$spec%' ORDER BY firstName";
                 }else{
-                    // SQL query to select the desired columns from the "Employee" table
-                    $sql = "SELECT taskID,createdDate,listName,caption FROM task WHERE email = '$email' ORDER BY createdDate DESC";
+                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor ORDER BY firstName";
                 }
 
                 // Execute the query
@@ -163,10 +172,9 @@
                     // Fetch the rows
                     while ($row = $result->fetch_assoc()) {
                         // Display the data in table rows
-                        echo "<tr class='clickable-row' data-href='items/index.php?taskID=" . $row["taskID"] . "'>";
-                        echo "<td class='p-3'>" . $row["listName"] . "</td>";
-                        echo "<td class='p-3'>" . $row["caption"] . "</td>";
-                        echo "<td class='p-3'>" . $row["createdDate"] . "</td>";
+                        echo "<tr class='clickable-row' data-href='items/index.php?docEmail=" . $row["email"] . "'>";
+                        echo "<td class='p-3'> Dr. " . $row["firstName"] . " " . $row["lastName"] . " </td>";
+                        echo "<td class='p-3'>" . $row["specialization"] . "</td>";
                         echo "</tr>";
                     }
                 } else {
