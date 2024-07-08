@@ -51,6 +51,7 @@
             background-color: #171717;
             border-color: #405D72;
             color: whitesmoke;
+            text-align: center;
         }
 
         .form-control:focus {
@@ -62,6 +63,7 @@
         .form-control::placeholder {
             color: grey;
             opacity: 0.7;
+            text-align: center;
         }
 
         th {
