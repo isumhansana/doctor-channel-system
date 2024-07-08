@@ -142,7 +142,6 @@
                 $username = "root";
                 $password = "";
                 $dbname = "docspot";
-                $email = $_SESSION['patientloggedin'];
 
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
