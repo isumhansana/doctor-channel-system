@@ -11,6 +11,6 @@ The DocSpot is built using the following technologies:
 
 ## Features
 
-- **Doctor-Patient Communication**: The system allows doctors to send notes to patients.
+- **Doctor-Patient Communication**: The system allows doctors to send notes to patients and patients to view them.
+- **Checking Appointment Details**: The system allows both doctors and patients to check their appointment details seperately.
 - **User Interface**: The system has a user-friendly interface, making it easy for both doctors and patients to use.
-- **Efficient Communication**: The system is designed to be efficient, allowing both doctors and patients to quickly and easily communicate.
