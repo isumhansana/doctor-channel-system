@@ -183,7 +183,7 @@
                     while ($row = $result->fetch_assoc()) {
                         
                         // Display the data in table rows
-                        echo "<tr class='clickable-row' data-href='notes.php?appointmentID=" . $row["appointmentID"] . "'>";
+                        echo "<tr class='clickable-row' data-href='../notes/index.php?appointmentID=" . $row["appointmentID"] . "'>";
                         if (isset($_SESSION['patientloggedin'])) {
                             echo "<td class='p-3'> Dr. " . $row["firstName"] . " " . $row["lastName"] .  " </td>";
                         } else if (isset($_SESSION['doctorloggedin'])) {
