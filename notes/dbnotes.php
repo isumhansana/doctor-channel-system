@@ -15,14 +15,13 @@
     $username = "root";
     $password = "";
     $dbname = "docspot";
+    $appointmentID = $_GET['appointmentID'];
 
     // Check if the form has been submitted
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Get the form data
         $title = $_POST['title'];
         $description = $_POST['description'];
-        
-        $appointmentID = $_GET['appointmentID'];
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 
