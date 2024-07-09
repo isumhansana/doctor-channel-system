@@ -107,12 +107,12 @@
 
         <form action="" method="GET">
         <div class="row" style="justify-content: center;">
-            <div class="col-md-10">
+            <div class="col-md-11">
                 <div class="form-group">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Search By First Name or Last Name" />
                 </div>
             </div>
-            <div class="col-md-2 mt-3">
+            <div class="col-md-1">
                 <button type="submit" class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -126,8 +126,15 @@
         <table class="table table-dark table-hover mt-5">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Specialization</th>
+                    <?php
+                        if(isset($_SESSION['doctorloggedin'])) {
+                            echo '<th>Patient\'s Name</th>';
+                        } else if(isset($_SESSION['patientloggedin'])) {
+                            echo '<th>Doctor\'s Name</th>';
+                        }
+                    ?>
+                    <th>Description</th>
+                    <th>Appointment Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -146,18 +153,25 @@
                 }
 
                 //Check if a search request is made
-                if((isset($_GET['name']) && isset($_GET['spec'])) && (!empty($_GET['spec'])) && (!empty($_GET['name']))) {
-                    $name=$_GET['name'];
-                    $spec=$_GET['spec'];
-                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE (firstName LIKE '%$name%' OR lastName LIKE '%$name%') AND specialization LIKE '%$spec%' ORDER BY firstName";
-                }else if((isset($_GET['name'])) && (!empty($_GET['name']))){
-                    $name=$_GET['name'];
-                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE (firstName LIKE '%$name%' OR lastName LIKE '%$name%') ORDER BY firstName";
-                }else if((isset($_GET['spec'])) && (!empty($_GET['spec']))){
-                    $spec=$_GET['spec'];
-                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE specialization LIKE '%$spec%' ORDER BY firstName";
-                }else{
-                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor ORDER BY firstName";
+                if(isset($_SESSION['patientloggedin'])) {
+                    $email = $_SESSION['patientloggedin'];
+                
+                    if((isset($_GET['name'])) && (!empty($_GET['name']))) {
+                        $name=$_GET['name'];
+                        $sql = "SELECT a.appointmentID, a.description, a.date, d.firstName, d.lastName FROM appointment a INNER JOIN doctor d ON a.docEmail = d.email WHERE patientEmail = '$email' AND (firstName LIKE '%$name%' OR lastName LIKE '%$name%') ORDER BY date DESC";
+                    } else {
+                        $sql = "SELECT a.appointmentID, a.description, a.date, d.firstName, d.lastName FROM appointment a INNER JOIN doctor d ON a.docEmail = d.email WHERE patientEmail = '$email' ORDER BY date DESC";
+                    }
+
+                } else {
+                    $email = $_SESSION['doctorloggedin'];
+                
+                    if((isset($_GET['name'])) && (!empty($_GET['name']))) {
+                        $name=$_GET['name'];
+                        $sql = "SELECT a.appointmentID, a.description, a.date, p.firstName, p.lastName FROM appointment a INNER JOIN patient p ON a.patientEmail = p.email WHERE docEmail = '$email' AND (firstName LIKE '%$name%' OR lastName LIKE '%$name%') ORDER BY date DESC";
+                    } else {
+                        $sql = "SELECT a.appointmentID, a.description, a.date, p.firstName, p.lastName FROM appointment a INNER JOIN patient p ON a.patientEmail = p.email WHERE docEmail = '$email' ORDER BY date DESC";
+                    }
                 }
 
                 // Execute the query
@@ -167,10 +181,18 @@
                 if ($result) {
                     // Fetch the rows
                     while ($row = $result->fetch_assoc()) {
+                        
                         // Display the data in table rows
-                        echo "<tr class='clickable-row' data-href='channeling.php?docEmail=" . $row["email"] . "'>";
-                        echo "<td class='p-3'> Dr. " . $row["firstName"] . " " . $row["lastName"] . " </td>";
-                        echo "<td class='p-3'>" . $row["specialization"] . "</td>";
+                        echo "<tr class='clickable-row' data-href='notes.php?appointmentID=" . $row["appointmentID"] . "'>";
+                        if (isset($_SESSION['patientloggedin'])) {
+                            echo "<td class='p-3'> Dr. " . $row["firstName"] . " " . $row["lastName"] .  " </td>";
+                        } else if (isset($_SESSION['doctorloggedin'])) {
+                            echo "<td class='p-3'> " . $row["firstName"] . " " . $row["lastName"] .  " </td>";
+                        }
+                        
+                        echo "<td class='p-3'>" . $row["description"] . "</td>";
+                        echo "<td class='p-3'>" . $row["date"] . "</td>";
+                        echo "<td class='p-3'> <a class='btn btn-outline-danger' href=" . "dbappointments.php?delid=" . $row["appointmentID"] . ">X</a> </td>";
                         echo "</tr>";
                     }
                 } else {
