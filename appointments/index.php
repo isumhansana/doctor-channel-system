@@ -1,11 +1,7 @@
 <?php
     session_start();
-    if(isset($_SESSION['doctorloggedin'])) {
-        header('Location: ../appointments/index.php');
-        exit();
-    }
-    else if(!isset($_SESSION['patientloggedin'])) {
-        header('Location: ../loginPatient.php');
+    if(!isset($_SESSION['patientloggedin']) && !isset($_SESSION['doctorloggedin'])) {
+        header('Location: ../index.php');
         exit();
     }
 ?>
@@ -107,22 +103,21 @@
 
     <div class="container-md text-center mt-5 hero-text"
         style="max-width: 900px; padding: 0px; background-color: #171717;">
-        <h1>Select Your Doctor</h1>
+        <h1>Appointments</h1>
 
         <form action="" method="GET">
         <div class="row" style="justify-content: center;">
-            <div class="col-md-5">
+            <div class="col-md-10">
                 <div class="form-group">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Search By First Name or Last Name" />
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="spec" name="spec" placeholder="Search By Specialization" />
-                </div>
-            </div>
-            <div class="col-md-4 mt-3">
-                <button type="submit" class="btn btn-primary">Search</button>
+            <div class="col-md-2 mt-3">
+                <button type="submit" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+                </button>
             </div>
         </div>
         </form>

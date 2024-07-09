@@ -31,7 +31,7 @@ $patientEmail = $_SESSION['patientloggedin'];
 $sql = "INSERT INTO appointment (docEmail, patientEmail, description, date) VALUES ('$docEmail', '$patientEmail', '$description', '$date')";
 
 if ($conn->query($sql) === TRUE) {
-    header('Location: appointments.php');
+    header('Location: ../appointments/index.php');
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

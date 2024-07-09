@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION['doctorloggedin'])) {
-        header('Location: appointments.php');
+        header('Location: appointments/index.php');
         exit();
     }
     else if(!isset($_SESSION['patientloggedin'])) {
@@ -90,7 +90,7 @@
         </a>
       </div>
       <div class="col-md-4 mb-4">
-        <a href="appointments.php" class="card p-4 rounded-5 dash-card">
+        <a href="appointments/index.php" class="card p-4 rounded-5 dash-card">
           <img src="imgs/dashboard/appoint.png" class="card-img-top mb-2" alt="...">
           <h6 class="dash-card-text">Appointments</h6>
         </a>

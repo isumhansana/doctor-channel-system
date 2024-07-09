@@ -24,7 +24,7 @@ if ($result->num_rows === 1) {
     if ($user['password']===$pass) {
         $_SESSION['doctorloggedin'] = $uname;
         // Redirect to the desired page
-        header("Location: appointments.php");
+        header("Location: appointments/index.php");
         exit();
     } else {
         // Invalid password

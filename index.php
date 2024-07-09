@@ -52,7 +52,7 @@
       <?php
       if(isset($_SESSION['doctorloggedin'])) {
         echo(
-          '<a href="appointments.php" class="btn btn-primary btn-lg">View Your Appointments</a>'
+          '<a href="appointments/index.php" class="btn btn-primary btn-lg">View Your Appointments</a>'
         );
       } else {
         echo(
