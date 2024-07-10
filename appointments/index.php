@@ -109,7 +109,7 @@
         <div class="row" style="justify-content: center;">
             <div class="col-md-11">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Search By First Name or Last Name" />
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Search" />
                 </div>
             </div>
             <div class="col-md-1">
@@ -158,7 +158,7 @@
                 
                     if((isset($_GET['name'])) && (!empty($_GET['name']))) {
                         $name=$_GET['name'];
-                        $sql = "SELECT a.appointmentID, a.description, a.date, d.firstName, d.lastName FROM appointment a INNER JOIN doctor d ON a.docEmail = d.email WHERE patientEmail = '$email' AND (firstName LIKE '%$name%' OR lastName LIKE '%$name%') ORDER BY date DESC";
+                        $sql = "SELECT a.appointmentID, a.description, a.date, d.firstName, d.lastName FROM appointment a INNER JOIN doctor d ON a.docEmail = d.email WHERE patientEmail = '$email' AND (firstName LIKE '%$name%' OR lastName LIKE '%$name%' OR CONCAT(firstName, ' ', lastName) LIKE '%$name%') ORDER BY date DESC";
                     } else {
                         $sql = "SELECT a.appointmentID, a.description, a.date, d.firstName, d.lastName FROM appointment a INNER JOIN doctor d ON a.docEmail = d.email WHERE patientEmail = '$email' ORDER BY date DESC";
                     }
@@ -168,7 +168,7 @@
                 
                     if((isset($_GET['name'])) && (!empty($_GET['name']))) {
                         $name=$_GET['name'];
-                        $sql = "SELECT a.appointmentID, a.description, a.date, p.firstName, p.lastName FROM appointment a INNER JOIN patient p ON a.patientEmail = p.email WHERE docEmail = '$email' AND (firstName LIKE '%$name%' OR lastName LIKE '%$name%') ORDER BY date DESC";
+                        $sql = "SELECT a.appointmentID, a.description, a.date, p.firstName, p.lastName FROM appointment a INNER JOIN patient p ON a.patientEmail = p.email WHERE docEmail = '$email' AND (firstName LIKE '%$name%' OR lastName LIKE '%$name%' OR CONCAT(firstName, ' ', lastName) LIKE '%$name%') ORDER BY date DESC";
                     } else {
                         $sql = "SELECT a.appointmentID, a.description, a.date, p.firstName, p.lastName FROM appointment a INNER JOIN patient p ON a.patientEmail = p.email WHERE docEmail = '$email' ORDER BY date DESC";
                     }
