@@ -154,10 +154,10 @@
                 if((isset($_GET['name']) && isset($_GET['spec'])) && (!empty($_GET['spec'])) && (!empty($_GET['name']))) {
                     $name=$_GET['name'];
                     $spec=$_GET['spec'];
-                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE (firstName LIKE '%$name%' OR lastName LIKE '%$name%' OR CONCAT(firstName, ' ', lastName) LIKE '%$name%') AND specialization LIKE '%$spec%' ORDER BY firstName";
+                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE CONCAT(firstName, ' ', lastName) LIKE '%$name%' AND specialization LIKE '%$spec%' ORDER BY firstName";
                 }else if((isset($_GET['name'])) && (!empty($_GET['name']))){
                     $name=$_GET['name'];
-                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE (firstName LIKE '%$name%' OR lastName LIKE '%$name%' OR CONCAT(firstName, ' ', lastName) LIKE '%$name%') ORDER BY firstName";
+                    $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE CONCAT(firstName, ' ', lastName) LIKE '%$name%' ORDER BY firstName";
                 }else if((isset($_GET['spec'])) && (!empty($_GET['spec']))){
                     $spec=$_GET['spec'];
                     $sql = "SELECT email, firstName, lastName, specialization FROM doctor WHERE specialization LIKE '%$spec%' ORDER BY firstName";

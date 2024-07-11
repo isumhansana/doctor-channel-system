@@ -158,7 +158,7 @@
                 
                     if((isset($_GET['name'])) && (!empty($_GET['name']))) {
                         $name=$_GET['name'];
-                        $sql = "SELECT a.appointmentID, a.description, a.date, d.firstName, d.lastName FROM appointment a INNER JOIN doctor d ON a.docEmail = d.email WHERE patientEmail = '$email' AND (firstName LIKE '%$name%' OR lastName LIKE '%$name%' OR CONCAT(firstName, ' ', lastName) LIKE '%$name%') ORDER BY date DESC";
+                        $sql = "SELECT a.appointmentID, a.description, a.date, d.firstName, d.lastName FROM appointment a INNER JOIN doctor d ON a.docEmail = d.email WHERE patientEmail = '$email' AND CONCAT(firstName, ' ', lastName) LIKE '%$name%' ORDER BY date DESC";
                     } else {
                         $sql = "SELECT a.appointmentID, a.description, a.date, d.firstName, d.lastName FROM appointment a INNER JOIN doctor d ON a.docEmail = d.email WHERE patientEmail = '$email' ORDER BY date DESC";
                     }
